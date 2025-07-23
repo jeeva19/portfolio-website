@@ -1,33 +1,33 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail, MapPin, Phone, Linkedin, Github, Camera, Palette, Code } from 'lucide-react';
+import { Mail, MapPin, Phone, Linkedin, HardHat, Building2, Hammer } from 'lucide-react';
 
 const About = () => {
   const skills = [
-    { name: 'Photography', icon: Camera, level: 90 },
-    { name: 'Design', icon: Palette, level: 85 },
-    { name: 'Development', icon: Code, level: 80 },
-    { name: 'Creative Direction', icon: Camera, level: 88 }
+    { name: 'Residential Construction', icon: HardHat, level: 95 },
+    { name: 'Commercial Projects', icon: Building2, level: 90 },
+    { name: 'Renovation & Remodeling', icon: Hammer, level: 92 },
+    { name: 'Project Management', icon: Building2, level: 88 }
   ];
 
   const experiences = [
     {
-      title: 'Creative Director',
-      company: 'Studio Creative',
-      period: '2022 - Present',
-      description: 'Leading creative projects and managing design teams to deliver innovative solutions.'
+      title: 'Luxury Villa Construction',
+      company: 'Ahvanya Constructions',
+      period: '2023 - Present',
+      description: 'Completed multiple high-end residential projects with a focus on quality and client satisfaction.'
     },
     {
-      title: 'Photographer',
-      company: 'Freelance',
-      period: '2020 - Present',
-      description: 'Capturing moments and creating visual stories for clients across various industries.'
+      title: 'Commercial Complex Development',
+      company: 'Ahvanya Constructions',
+      period: '2021 - 2023',
+      description: 'Delivered state-of-the-art office and retail spaces for leading businesses.'
     },
     {
-      title: 'Design Consultant',
-      company: 'Design Studio X',
-      period: '2019 - 2022',
-      description: 'Providing strategic design solutions and creative direction for brands and businesses.'
+      title: 'Renovation & Restoration',
+      company: 'Ahvanya Constructions',
+      period: '2019 - 2021',
+      description: 'Transformed aging properties into modern, functional spaces while preserving their character.'
     }
   ];
 
@@ -41,32 +41,29 @@ const About = () => {
       >
         <div className="about-content">
           <div className="about-text">
-            <h1>About Me</h1>
+            <h1>About Ahvanya Constructions</h1>
             <p className="about-intro">
-              I'm a passionate creative professional with over 5 years of experience in photography, 
-              design, and creative direction. My work is driven by a desire to tell compelling stories 
-              and create meaningful connections through visual art.
+              <b>Ahvanya Constructions</b> is dedicated to building dreams with precision, passion, and integrity. With years of experience in the construction industry, we deliver exceptional residential, commercial, and renovation projects that stand the test of time.
             </p>
             <p>
-              Based in the vibrant creative community, I specialize in capturing authentic moments 
-              and translating ideas into compelling visual narratives. My approach combines technical 
-              expertise with artistic vision to deliver results that resonate with audiences.
+              <b>Our Mission:</b> To provide world-class construction services, ensuring every project is a testament to quality, safety, and client satisfaction.
+            </p>
+            <p>
+              <b>Our Values:</b> Excellence, transparency, innovation, and a commitment to turning your vision into reality.
             </p>
           </div>
-          
           <motion.div
             className="about-image"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
           >
-            <div className="profile-placeholder">
-              <Camera size={48} />
-              <p>Profile Photo</p>
+            <div className="profile-placeholder" style={{ background: 'linear-gradient(135deg, #1a2236 0%, #bfa14a 100%)' }}>
+              <HardHat size={48} />
+              <p>Our Team</p>
             </div>
           </motion.div>
         </div>
       </motion.div>
-
       <motion.div
         className="contact-info"
         initial={{ opacity: 0, y: 30 }}
@@ -80,28 +77,25 @@ const About = () => {
             transition={{ duration: 0.3 }}
           >
             <Mail size={20} />
-            <span>hello@portfolio.com</span>
+            <span>contact@ahvanyaconstructions.com</span>
           </motion.div>
-          
           <motion.div
             className="contact-item"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
           >
             <MapPin size={20} />
-            <span>Creative City, CA</span>
+            <span>123 Elegant Avenue, Metro City</span>
           </motion.div>
-          
           <motion.div
             className="contact-item"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
           >
             <Phone size={20} />
-            <span>+1 (555) 123-4567</span>
+            <span>+1 (555) 987-6543</span>
           </motion.div>
         </div>
-
         <div className="social-links">
           <motion.a
             href="#"
@@ -111,24 +105,15 @@ const About = () => {
           >
             <Linkedin size={24} />
           </motion.a>
-          <motion.a
-            href="#"
-            className="social-link"
-            whileHover={{ scale: 1.1, y: -2 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <Github size={24} />
-          </motion.a>
         </div>
       </motion.div>
-
       <motion.div
         className="skills-section"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
       >
-        <h2>Skills & Expertise</h2>
+        <h2>Our Expertise</h2>
         <div className="skills-grid">
           {skills.map((skill, index) => (
             <motion.div
@@ -139,7 +124,7 @@ const About = () => {
               transition={{ duration: 0.5, delay: 0.1 * index }}
               whileHover={{ y: -5, scale: 1.02 }}
             >
-              <div className="skill-icon">
+              <div className="skill-icon" style={{ background: 'linear-gradient(135deg, #bfa14a 0%, #1a2236 100%)' }}>
                 <skill.icon size={24} />
               </div>
               <h3>{skill.name}</h3>
@@ -156,14 +141,13 @@ const About = () => {
           ))}
         </div>
       </motion.div>
-
       <motion.div
         className="experience-section"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.6 }}
       >
-        <h2>Experience</h2>
+        <h2>Our Projects</h2>
         <div className="experience-timeline">
           {experiences.map((exp, index) => (
             <motion.div

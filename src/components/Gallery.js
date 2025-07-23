@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ChevronLeft, ChevronRight, Filter } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight, Filter, Building2, Home, Hammer } from 'lucide-react';
 
 const Gallery = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -8,76 +8,76 @@ const Gallery = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const categories = [
-    { id: 'all', name: 'All Work' },
-    { id: 'photography', name: 'Photography' },
-    { id: 'design', name: 'Design' },
-    { id: 'creative', name: 'Creative' }
+    { id: 'all', name: 'All Projects' },
+    { id: 'residential', name: 'Residential' },
+    { id: 'commercial', name: 'Commercial' },
+    { id: 'renovation', name: 'Renovation' }
   ];
 
   const galleryItems = [
     {
       id: 1,
-      title: 'Urban Landscape',
-      category: 'photography',
-      description: 'Cityscape photography capturing the essence of urban life.',
-      imageUrl: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&h=600&fit=crop',
-      tags: ['urban', 'landscape', 'city']
+      title: 'Luxury Villa',
+      category: 'residential',
+      description: 'A modern luxury villa with elegant interiors and lush landscaping.',
+      imageUrl: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&h=600&fit=crop',
+      tags: ['villa', 'residential', 'luxury']
     },
     {
       id: 2,
-      title: 'Minimalist Design',
-      category: 'design',
-      description: 'Clean and modern design principles in action.',
-      imageUrl: 'https://images.unsplash.com/photo-1558655146-d09347e92766?w=800&h=600&fit=crop',
-      tags: ['minimal', 'design', 'modern']
+      title: 'Downtown Office Complex',
+      category: 'commercial',
+      description: 'A state-of-the-art office building in the heart of the city.',
+      imageUrl: 'https://images.unsplash.com/photo-1464983953574-0892a716854b?w=800&h=600&fit=crop',
+      tags: ['office', 'commercial', 'modern']
     },
     {
       id: 3,
-      title: 'Creative Concept',
-      category: 'creative',
-      description: 'Experimental creative work pushing boundaries.',
-      imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop',
-      tags: ['creative', 'experimental', 'art']
+      title: 'Retail Mall Renovation',
+      category: 'renovation',
+      description: 'Complete renovation of a retail mall, blending classic and contemporary design.',
+      imageUrl: 'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?w=800&h=600&fit=crop',
+      tags: ['mall', 'renovation', 'retail']
     },
     {
       id: 4,
-      title: 'Portrait Series',
-      category: 'photography',
-      description: 'Intimate portrait photography revealing human stories.',
-      imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop',
-      tags: ['portrait', 'human', 'story']
+      title: 'Elegant Apartment Complex',
+      category: 'residential',
+      description: 'Premium apartments with world-class amenities and architecture.',
+      imageUrl: 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=800&h=600&fit=crop',
+      tags: ['apartment', 'residential', 'premium']
     },
     {
       id: 5,
-      title: 'Brand Identity',
-      category: 'design',
-      description: 'Complete brand identity design and visual systems.',
-      imageUrl: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=600&fit=crop',
-      tags: ['brand', 'identity', 'logo']
+      title: 'Corporate Headquarters',
+      category: 'commercial',
+      description: 'A landmark corporate headquarters with sustainable design.',
+      imageUrl: 'https://images.unsplash.com/photo-1523413363574-c30aa1c2a516?w=800&h=600&fit=crop',
+      tags: ['corporate', 'commercial', 'sustainable']
     },
     {
       id: 6,
-      title: 'Abstract Art',
-      category: 'creative',
-      description: 'Abstract artistic expressions and creative explorations.',
-      imageUrl: 'https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=800&h=600&fit=crop',
-      tags: ['abstract', 'art', 'creative']
+      title: 'Heritage Home Restoration',
+      category: 'renovation',
+      description: 'Restoration of a heritage home, preserving its original charm.',
+      imageUrl: 'https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=800&h=600&fit=crop',
+      tags: ['heritage', 'renovation', 'restoration']
     },
     {
       id: 7,
-      title: 'Nature Photography',
-      category: 'photography',
-      description: 'Capturing the beauty and serenity of natural landscapes.',
-      imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop',
-      tags: ['nature', 'landscape', 'serenity']
+      title: 'Modern Family Home',
+      category: 'residential',
+      description: 'A spacious family home with open-plan living and garden views.',
+      imageUrl: 'https://images.unsplash.com/photo-1468436139062-f60a71c5c892?w=800&h=600&fit=crop',
+      tags: ['family', 'residential', 'modern']
     },
     {
       id: 8,
-      title: 'UI/UX Design',
-      category: 'design',
-      description: 'User interface and experience design for digital products.',
-      imageUrl: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=600&fit=crop',
-      tags: ['ui', 'ux', 'digital']
+      title: 'Boutique Hotel',
+      category: 'commercial',
+      description: 'A boutique hotel project with luxury finishes and unique design.',
+      imageUrl: 'https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=800&h=600&fit=crop',
+      tags: ['hotel', 'commercial', 'boutique']
     }
   ];
 
@@ -114,10 +114,9 @@ const Gallery = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <h1>Gallery</h1>
-        <p>Explore my creative work and photography portfolio</p>
+        <h1>Our Projects</h1>
+        <p>Explore our portfolio of residential, commercial, and renovation projects.</p>
       </motion.div>
-
       <motion.div
         className="gallery-filters"
         initial={{ opacity: 0, y: 20 }}
@@ -139,7 +138,6 @@ const Gallery = () => {
           ))}
         </div>
       </motion.div>
-
       <motion.div
         className="gallery-grid"
         layout
@@ -159,7 +157,7 @@ const Gallery = () => {
               transition={{ duration: 0.5 }}
               whileHover={{ 
                 scale: 1.05,
-                boxShadow: "0 20px 40px rgba(0,0,0,0.1)"
+                boxShadow: "0 20px 40px rgba(191,161,74,0.15)"
               }}
               onClick={() => openLightbox(item, index)}
             >
@@ -181,7 +179,6 @@ const Gallery = () => {
           ))}
         </AnimatePresence>
       </motion.div>
-
       <AnimatePresence>
         {selectedImage && (
           <motion.div
@@ -201,11 +198,9 @@ const Gallery = () => {
               <button className="lightbox-close" onClick={closeLightbox}>
                 <X size={24} />
               </button>
-              
               <div className="lightbox-image">
                 <img src={selectedImage.imageUrl} alt={selectedImage.title} />
               </div>
-              
               <div className="lightbox-info">
                 <h2>{selectedImage.title}</h2>
                 <p>{selectedImage.description}</p>
@@ -215,7 +210,6 @@ const Gallery = () => {
                   ))}
                 </div>
               </div>
-
               <button className="lightbox-nav prev" onClick={prevImage}>
                 <ChevronLeft size={24} />
               </button>
